@@ -7,10 +7,16 @@ def test_correct_name():
 @pytest.mark.parametrize(
     "input_text, expected_initials",
     [
-        # Standard case
+        # original case
         ("John Smith", "J. S."),
-        # New case: Extra whitespaces and leading/trailing spaces
+        # whitespace case
         ("      Eastern     Michigan    University ", "E. M. U."),
+        # New "prefix preservation" cases
+        ("@abc", "@A."),
+        ("@843A", "@8."),
+        ("--**abc", "--**A."),
+        # Combined case (sentence with prefixes)
+        ("#1 priority", "#1. P."),
     ],
 )
 def test_given_value_for_initial(input_text, expected_initials):
