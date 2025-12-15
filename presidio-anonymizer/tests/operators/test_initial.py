@@ -1,9 +1,10 @@
+import pytest
 from presidio_anonymizer.operators import Initial
 
 def test_correct_name():
     assert Initial().operator_name() == "initial"
 
-pytest.mark.parametrize(
+@pytest.mark.parametrize(
     "input_text, initials",
     [
         ("John Smith", "J. S."),
