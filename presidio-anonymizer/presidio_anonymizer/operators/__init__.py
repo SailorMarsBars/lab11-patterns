@@ -8,6 +8,7 @@ from .encrypt import Encrypt
 
 from .decrypt import Decrypt  # isort:skip
 from .hash import Hash
+from .initial import Initial  # <--- Initial added
 from .keep import Keep
 from .mask import Mask
 from .redact import Redact
@@ -26,6 +27,7 @@ __all__ = [
     "OperatorType",
     "Operator",
     "Hash",
+    "Initial",  # <--- Initial added
     "Mask",
     "Redact",
     "Keep",
